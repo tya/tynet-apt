@@ -1,0 +1,149 @@
+name: Ingest .deb release
+
+on:
+  repository_dispatch:
+    types: [new-release]
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "owner/repo of the source release (e.g. tya/tynet-cloud-init)"
+        required: true
+      tag:
+        description: "git tag (e.g. v0.4.0)"
+        required: true
+      package:
+        description: "Debian package name (e.g. serve-cloud-init)"
+        required: true
+      asset_url:
+        description: "Direct download URL of the .deb asset"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve inputs
+        id: in
+        env:
+          EVENT: ${{ github.event_name }}
+          WD_REPO: ${{ github.event.inputs.repo }}
+          WD_TAG: ${{ github.event.inputs.tag }}
+          WD_PKG: ${{ github.event.inputs.package }}
+          WD_URL: ${{ github.event.inputs.asset_url }}
+          RD_REPO: ${{ github.event.client_payload.repo }}
+          RD_TAG: ${{ github.event.client_payload.tag }}
+          RD_PKG: ${{ github.event.client_payload.package }}
+          RD_URL: ${{ github.event.client_payload.asset_url }}
+        run: |
+          set -eu
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            REPO="$WD_REPO"; TAG="$WD_TAG"; PKG="$WD_PKG"; URL="$WD_URL"
+          else
+            REPO="$RD_REPO"; TAG="$RD_TAG"; PKG="$RD_PKG"; URL="$RD_URL"
+          fi
+          for v in REPO TAG PKG URL; do
+            eval val="\$$v"
+            if [ -z "$val" ]; then echo "::error::missing $v"; exit 1; fi
+          done
+          # First letter of package, normalized to lowercase. Debian convention
+          # is libfoo -> pool/main/libf/libfoo, but we don't ship any lib*
+          # packages, so the simple single-letter case is fine.
+          FIRST=$(printf %s "$PKG" | cut -c1 | tr '[:upper:]' '[:lower:]')
+          {
+            echo "repo=$REPO"
+            echo "tag=$TAG"
+            echo "package=$PKG"
+            echo "asset_url=$URL"
+            echo "first=$FIRST"
+            echo "version=${TAG#v}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Checkout main (apt-ftparchive.conf)
+        uses: actions/checkout@v5
+        with:
+          path: src
+
+      - name: Checkout gh-pages
+        uses: actions/checkout@v5
+        with:
+          ref: gh-pages
+          path: public
+          fetch-depth: 0
+
+      - name: Install tooling
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq dpkg-dev apt-utils gnupg
+
+      - name: Import GPG key
+        env:
+          GPG_KEY: ${{ secrets.TYNET_APT_GPG_KEY }}
+        run: |
+          set -eu
+          mkdir -p ~/.gnupg && chmod 700 ~/.gnupg
+          printf "use-agent\npinentry-mode loopback\n" > ~/.gnupg/gpg.conf
+          printf %s "$GPG_KEY" | gpg --batch --import
+          gpg --list-secret-keys --keyid-format=long
+
+      - name: Download .deb
+        env:
+          URL: ${{ steps.in.outputs.asset_url }}
+          PKG: ${{ steps.in.outputs.package }}
+          VER: ${{ steps.in.outputs.version }}
+        run: |
+          set -eu
+          DEB="${PKG}_${VER}_arm64.deb"
+          curl -fsSL --retry 3 -o "/tmp/$DEB" "$URL"
+          file "/tmp/$DEB"
+          dpkg-deb -I "/tmp/$DEB" | head -20
+          echo "DEB=$DEB" >> "$GITHUB_ENV"
+
+      - name: Place .deb into pool
+        env:
+          PKG: ${{ steps.in.outputs.package }}
+          FIRST: ${{ steps.in.outputs.first }}
+        run: |
+          set -eu
+          DEST="public/pool/main/$FIRST/$PKG"
+          mkdir -p "$DEST"
+          mv "/tmp/$DEB" "$DEST/"
+          ls -la "$DEST"
+
+      - name: Regenerate indexes and sign Release
+        env:
+          GPG_PASS: ${{ secrets.TYNET_APT_GPG_PASSPHRASE }}
+        run: |
+          set -eu
+          cd public
+          mkdir -p dists/stable/main/binary-arm64
+          dpkg-scanpackages --multiversion pool/main > dists/stable/main/binary-arm64/Packages
+          gzip -k -f dists/stable/main/binary-arm64/Packages
+          apt-ftparchive -c ../src/apt-ftparchive.conf release dists/stable > dists/stable/Release
+          gpg --batch --yes --pinentry-mode loopback --passphrase "$GPG_PASS" \
+              --clearsign -o dists/stable/InRelease dists/stable/Release
+          gpg --batch --yes --pinentry-mode loopback --passphrase "$GPG_PASS" \
+              -abs -o dists/stable/Release.gpg dists/stable/Release
+
+      - name: Commit and push
+        env:
+          PKG: ${{ steps.in.outputs.package }}
+          TAG: ${{ steps.in.outputs.tag }}
+        run: |
+          set -eu
+          cd public
+          git config user.name "tynet-apt[bot]"
+          git config user.email "tynet-apt@tynet.us"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "::notice::no changes to commit"
+            exit 0
+          fi
+          git commit -m "ingest $PKG $TAG"
+          git push origin gh-pages
