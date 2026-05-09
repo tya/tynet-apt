@@ -1,0 +1,34 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Architectures: arm64
+Codename: stable
+Components: main
+Date: Sat, 09 May 2026 00:46:25 +0000
+Description: Tynet apt repository (GitHub Pages)
+Label: tynet
+Origin: tynet
+Suite: stable
+MD5Sum:
+ 7a547da02575a8e08449bdf6a10e489e              183 Release
+ e182bc90227f94842fee64edf290ee23              623 main/binary-arm64/Packages
+ b39c43eb90748f7f793507b6d0b0ea64              433 main/binary-arm64/Packages.gz
+SHA1:
+ 2a08381154ebf4323651b6ecff1d45cc72194d78              183 Release
+ 3fb116fd0963b8fb4ffd05c6d4eee3e712e8ae27              623 main/binary-arm64/Packages
+ 440b8a0d4c1e0e7ec5ac1e323f8a3e7bce122f1d              433 main/binary-arm64/Packages.gz
+SHA256:
+ 2a91e3d6fc852ebdad63b17ef6e95d97cffb40bbaaa0f6648a925286f8b44215              183 Release
+ 9e1438012f159fd550c0b13a640356d38aae59bb69bef8af5bb7d5be3fcb97ff              623 main/binary-arm64/Packages
+ 637c60aa88d138886c941258b9688a44ab19238f8dc645a369d37147e4af6e0b              433 main/binary-arm64/Packages.gz
+SHA512:
+ 3e749391e1c85d9e1940769ba8b21316d38ef6aee0a9d7ebea5861aa0d6dfd716d8b6973c73ba4958fcd1612cc2a8319aefdcd55c07a73760d4ce3626d648779              183 Release
+ 1e8073663988b8c467d9b1b25e092a88d69f7ae0f879fc28ce755b0ee6d2d13fa5f8cff21b13bdb5e38ccf6155b6658ae30fb33c580ed2941177fd76937f0bef              623 main/binary-arm64/Packages
+ 02202cfc2bb5259b3a3aebbde3016f0bfe054cdccfaff51c1a0200dccf1bb95b8214229ec1c7a005b21ff047c9cc2382d1a6640dbffd49e27860fa766ba019ba              433 main/binary-arm64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQSYDvjUpspi6U6OdppHqoRElF9FCgUCaf6D4QAKCRBHqoRElF9F
+CjyKAP4rEJDh0EO214A5sVKkaAQDRDikZFyeAgKkW/LPd1uOsgD/agJEA0KTaj7o
+gj50n1I4Dnwhla+k76YeZgI5T59YRA0=
+=OKhs
+-----END PGP SIGNATURE-----
