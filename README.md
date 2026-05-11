@@ -10,10 +10,7 @@ deb [signed-by=/etc/apt/trusted.gpg.d/tynet.gpg] https://tya.github.io/tynet-apt
 
 ## How it works
 
-Each consumer repo (`tynet-cloud-init`, `tynet-deb-installer`) appends a step
-to its release workflow that fires `repository_dispatch` here when a tag is
-published. The `ingest.yml` workflow downloads the released `.deb`, drops it
-into `pool/main/<first-letter>/<package>/`, regenerates `Packages` /
+Each consumer repo (currently just [`tynet-cloud-init`](https://github.com/tya/tynet-cloud-init)) appends a step to its release workflow that fires `repository_dispatch` here when a tag is published. The `ingest.yml` workflow downloads the released `.deb`, drops it into `pool/main/<first-letter>/<package>/`, regenerates `Packages` /
 `Packages.gz` with `dpkg-scanpackages`, regenerates the `Release` file with
 `apt-ftparchive`, and signs `Release` / `InRelease` with the tynet apt key
 (GPG fingerprint `47AA8444945F450A`).
@@ -24,7 +21,6 @@ The signed result is committed back to `gh-pages` and served via Pages.
 
 ```
 pool/main/s/serve-cloud-init/serve-cloud-init_<ver>_arm64.deb
-pool/main/t/tynet-deb-installer/tynet-deb-installer_<ver>_arm64.deb
 dists/stable/main/binary-arm64/Packages
 dists/stable/main/binary-arm64/Packages.gz
 dists/stable/Release
