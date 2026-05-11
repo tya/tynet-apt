@@ -32,6 +32,26 @@ Description: NoCloud cloud-init seed data HTTP server for tynet Pi netboot.
  Serves per-node cloud-init metadata over HTTP to Raspberry Pis
  during NFS netboot.
 
+Package: tynet-deb-installer
+Version: 0.6.0
+Architecture: arm64
+Maintainer: Ty Alexander <ty.alexander@gmail.com>
+Installed-Size: 7135
+Conflicts: tynet-github-puller
+Replaces: tynet-github-puller
+Filename: pool/main/t/tynet-deb-installer/tynet-deb-installer_0.6.0_arm64.deb
+Size: 4119136
+MD5sum: d0e3c263bc2e0e0f0cc00394ae869ceb
+SHA1: 17794d04365480b103f225abc4752c313158b058
+SHA256: b429a0c1de567b1384733a24d72952aa42ef402e22b27369f38f1e619eea6675
+Section: net
+Priority: optional
+Homepage: https://github.com/tya/tynet-deb-installer
+Description: Auto-installs new versions of managed Debian packages from the host's
+ configured apt sources, with health-checked auto-rollback. One-shot,
+ triggered by its own systemd timer. Reads /etc/tynet-deb-installer/config.json
+ for the managed-package list and per-package healthcheck.
+
 Package: tynet-github-puller
 Version: 0.5.2
 Architecture: arm64
