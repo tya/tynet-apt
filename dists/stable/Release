@@ -1,24 +1,24 @@
 Architectures: arm64
 Codename: stable
 Components: main
-Date: Tue, 12 May 2026 16:30:29 +0000
+Date: Tue, 12 May 2026 17:26:38 +0000
 Description: Tynet apt repository (GitHub Pages)
 Label: tynet
 Origin: tynet
 Suite: stable
 MD5Sum:
- b5e83afec5a14325e0147df07c21d4df              183 Release
- 91085b078ad39139c687aa42bfe29e12             2574 main/binary-arm64/Packages
- 4d4efff7b416ae393ff9cc0288ca918c              796 main/binary-arm64/Packages.gz
+ bfeecb6239a52af211427ebfe1b6697d              183 Release
+ 6cdc84852c49b07039d959af25320870             3341 main/binary-arm64/Packages
+ 614c837a0f42ea83e8f8d6e813311a68             1126 main/binary-arm64/Packages.gz
 SHA1:
- a93262b06bcb3861a41ae26f62ba71ab3000a2f9              183 Release
- 57ee25e9fdc85e60f2dcce065f4fdde064bf2c9d             2574 main/binary-arm64/Packages
- 8efb445394392b0143b3815a7c103460504805e0              796 main/binary-arm64/Packages.gz
+ b4c8474fa7138d7c387576d6decb43a3a476c7df              183 Release
+ 2f5a1a79d43d48654571081bce4bf7ce48f73022             3341 main/binary-arm64/Packages
+ bc8d8047c9427ec1d725ae2dced49c9e228f2303             1126 main/binary-arm64/Packages.gz
 SHA256:
- 0849ac8ca52ecc4754501b3323ba2476eba3997e6c9d7a786fbf9bd6a2e311fc              183 Release
- f2c5ca53d1aa5168b7d3e72be46f43a940e2f0ad85d59bf87d0d905927cdb458             2574 main/binary-arm64/Packages
- c4120f77435312c0f99aa3eab0198eea8ed314618c6cd6f8c9e4787b50b34a22              796 main/binary-arm64/Packages.gz
+ 51924981a5cf43925d5a28418de01ee6e0a73e8708c63f45a49ea33d8ff576d0              183 Release
+ 075111a45eb1f06dd8d38e1591b8dbe10b25a0826069f1e14d51ea509ea1441b             3341 main/binary-arm64/Packages
+ 1d342a0a0d06351c89dfdd6dca13f2fb9bd7d5a91c3571d0741c701f7e23484a             1126 main/binary-arm64/Packages.gz
 SHA512:
- d9f5ffee54b5e10cc1b56e7613e84688c4103f2a56179e7dd87ce3bfcff8628d7ed88a789d78a1ecfdab471d7bc488b2ef231c8ba10acea63c8c99bf342cb559              183 Release
- 3bf42158a9de50dfeb78d78b69118a0f277ce3d25817f67200320e370e598f53b4ed876b101b0c2ba25ddecdbde7a6b7ba8c51b8153c007e740d9d8eb1518b9f             2574 main/binary-arm64/Packages
- c347fa18467b187d06e8d1cd053269e2d3fee2bc7aa30c3c76a2bdf0ea9c392cc07390ce0c4c59b7322474757e0994b8e36ddd4876c5748e4965a28caa0e2f62              796 main/binary-arm64/Packages.gz
+ 24e856d8e456d93dc1563c4440aeb1957cb188130323349621c56b07044380fde00b34e2a31e37ec2f4ab107d5945cf746f542292de9e5dc0cb067860c005725              183 Release
+ 5bb95f44072ee6353b311b8fa15e8b92f7e5933e0a8b866987e6569c4c1ed7443ff6b25b10c3431dede5f0f72970c825c413e678a54805f37b32f9ce9e5f81cd             3341 main/binary-arm64/Packages
+ b556fa4fa52b3a6d36e176cc24e0876c88238ae3ad27bdbc36204493f354a125c634d6693a39300b0c6a3689dad32013e0d12fa8115c277b3dc034a655ace4ce             1126 main/binary-arm64/Packages.gz

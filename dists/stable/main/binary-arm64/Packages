@@ -69,3 +69,21 @@ Description: NoCloud cloud-init seed data HTTP server for tynet Pi netboot.
  Serves per-node cloud-init metadata over HTTP to Raspberry Pis
  during NFS netboot.
 
+Package: tynet-img
+Version: 0.1.0
+Architecture: arm64
+Maintainer: Ty Alexander <ty.alexander@gmail.com>
+Installed-Size: 69
+Depends: kpartx, wget, xz-utils, rsync, systemd-container, e2fsprogs, nfs-kernel-server, tftpd-hpa, rpcbind, openssh-client, curl, iputils-ping
+Filename: pool/main/t/tynet-img/tynet-img_0.1.0_arm64.deb
+Size: 24710
+MD5sum: c88e8a93d8448e00913b991d02a43932
+SHA1: 5c20acf89eb6a149be6941a46f8d927a4d0bf693
+SHA256: 2c76f84538c9d7490feff773aca1843be75b75bc44b50025e7a18a15070fc213
+Section: admin
+Priority: optional
+Homepage: https://github.com/tya/tynet-img
+Description: Raspberry Pi netboot image build + per-node provisioning scripts
+ for tynet's kickstart host. Manages NFS-rooted Ubuntu images,
+ per-node TFTP dirs, overlayfs upper-layer state.
+
