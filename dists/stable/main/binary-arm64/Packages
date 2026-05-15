@@ -54,3 +54,21 @@ Description: Raspberry Pi netboot image build + per-node provisioning scripts
  for tynet's kickstart host. Manages NFS-rooted Ubuntu images,
  per-node TFTP dirs, overlayfs upper-layer state.
 
+Package: tynet-img
+Version: 0.1.2
+Architecture: arm64
+Maintainer: Ty Alexander <ty.alexander@gmail.com>
+Installed-Size: 76
+Depends: kpartx, wget, xz-utils, rsync, systemd-container, e2fsprogs, nfs-kernel-server, tftpd-hpa, rpcbind, openssh-client, curl, iputils-ping
+Filename: pool/main/t/tynet-img/tynet-img_0.1.2_arm64.deb
+Size: 27434
+MD5sum: 8b69779086366c98ce0678dea972bf9b
+SHA1: efd1cec0507d4a399f3b95b384ec277f5bf9b21a
+SHA256: 815c4ab64dc00d104b93c0736789915add4cfa5671f311eaab05708749e8d438
+Section: admin
+Priority: optional
+Homepage: https://github.com/tya/tynet-img
+Description: Raspberry Pi netboot image build + per-node provisioning scripts
+ for tynet's kickstart host. Manages NFS-rooted Ubuntu images,
+ per-node TFTP dirs, overlayfs upper-layer state.
+
