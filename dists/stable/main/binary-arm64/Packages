@@ -72,3 +72,22 @@ Description: Raspberry Pi netboot image build + per-node provisioning scripts
  for tynet's kickstart host. Manages NFS-rooted Ubuntu images,
  per-node TFTP dirs, overlayfs upper-layer state.
 
+Package: tynet-rpi-eeprom-update
+Version: 0.1.0
+Architecture: arm64
+Maintainer: Ty Alexander <ty.alexander@gmail.com>
+Installed-Size: 5
+Depends: rpi-eeprom, curl
+Filename: pool/main/t/tynet-rpi-eeprom-update/tynet-rpi-eeprom-update_0.1.0_arm64.deb
+Size: 3802
+MD5sum: 626632e975879f70130bd4371a879783
+SHA1: 57da7980b5512e7feca5553eeb079b7a0bd77220
+SHA256: ca712770320885e4bd3aa65c75e6182fac92d4498b34635a6ac24f9216456685
+Section: admin
+Priority: optional
+Homepage: https://github.com/tya/tynet-rpi-eeprom-update
+Description: Fetch and stage the newest pieeprom-*.bin from upstream
+ raspberrypi/rpi-eeprom on GitHub, preserving the currently-running
+ EEPROM config. Workaround for Ubuntu's rpi-eeprom package lagging
+ upstream by months. Manual invocation only; user reboots when ready.
+
