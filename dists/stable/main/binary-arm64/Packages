@@ -91,3 +91,22 @@ Description: Fetch and stage the newest pieeprom-*.bin from upstream
  EEPROM config. Workaround for Ubuntu's rpi-eeprom package lagging
  upstream by months. Manual invocation only; user reboots when ready.
 
+Package: tynet-rpi-eeprom-update
+Version: 0.1.1
+Architecture: arm64
+Maintainer: Ty Alexander <ty.alexander@gmail.com>
+Installed-Size: 6
+Depends: rpi-eeprom, curl
+Filename: pool/main/t/tynet-rpi-eeprom-update/tynet-rpi-eeprom-update_0.1.1_arm64.deb
+Size: 4208
+MD5sum: 320b6aa0e24240dc51186e26c3539c0f
+SHA1: 4491b01b3b542f38d03b23cde39da2efc50dbcd4
+SHA256: 70bfec82e7616d70a5e4f26b8ff8a35e39c0ce2021db7aea390ac4aed74385e7
+Section: admin
+Priority: optional
+Homepage: https://github.com/tya/tynet-rpi-eeprom-update
+Description: Fetch and stage the newest pieeprom-*.bin from upstream
+ raspberrypi/rpi-eeprom on GitHub, preserving the currently-running
+ EEPROM config. Workaround for Ubuntu's rpi-eeprom package lagging
+ upstream by months. Manual invocation only; user reboots when ready.
+
