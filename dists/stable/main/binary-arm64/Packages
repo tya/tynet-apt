@@ -130,3 +130,20 @@ Description: Fetch and stage the newest pieeprom-*.bin from upstream
  EEPROM config. Workaround for Ubuntu's rpi-eeprom package lagging
  upstream by months. Manual invocation only; user reboots when ready.
 
+Package: tynet-unifi-clients
+Version: 0.1.0
+Architecture: arm64
+Maintainer: Ty Alexander <ty.alexander@gmail.com>
+Installed-Size: 8320
+Filename: pool/main/t/tynet-unifi-clients/tynet-unifi-clients_0.1.0_arm64.deb
+Size: 3323094
+MD5sum: 5301fe3fd7363549cac0e3c04ac5ac44
+SHA1: 9d74d49f24eff990a72b96444a347af3c83d5f0e
+SHA256: 0ed3abb48ebabfa256ff19a3552a21639804510ec213ea04e7b09f55002a3e23
+Section: net
+Priority: optional
+Homepage: https://github.com/tya/tynet-unifi-clients
+Description: Sync per-client VLAN overrides from Ansible inventory to a UniFi controller.
+ Reads inventory/clients/<mac>.yml records as the source of truth and
+ reconciles them into the controller via the UniFi REST API.
+
