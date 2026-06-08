@@ -4,31 +4,31 @@ Hash: SHA512
 Architectures: arm64
 Codename: stable
 Components: main
-Date: Mon, 01 Jun 2026 22:31:26 +0000
+Date: Mon, 08 Jun 2026 17:30:36 +0000
 Description: Tynet apt repository (GitHub Pages)
 Label: tynet
 Origin: tynet
 Suite: stable
 MD5Sum:
- 990b615e30cfa77f6e8b79d07093e5db              183 Release
- de941cb48cad12c9c6cf982a8c2147ec             5978 main/binary-arm64/Packages
- 2dea61ed4302834769228354b8f24f1a             1794 main/binary-arm64/Packages.gz
+ e5cdaf4255189e87aadf3b5fbe88378f              183 Release
+ d03205083eb91cacee03175bfc85ff9d             6673 main/binary-arm64/Packages
+ 37d5c09db54e1ec99f612ede1cc34384             1903 main/binary-arm64/Packages.gz
 SHA1:
- ef4d53a083dddb2b2d39aea067087527f88fba74              183 Release
- a74c0fb1c3c9fdcb54454a274f609e275b13da2b             5978 main/binary-arm64/Packages
- b780daf758d41c55d5600358418e437a01b6cd4c             1794 main/binary-arm64/Packages.gz
+ df3c0581db68c10c4e67e939114d0a1a6e0dd29e              183 Release
+ c0913f2e1052b15c1eb62fe7b1fc39125c6491c2             6673 main/binary-arm64/Packages
+ a4015113aafa7d9728973642486ffa87a897763e             1903 main/binary-arm64/Packages.gz
 SHA256:
- 5a0927446ed4945fc0c87dbba48e146b630e2a64dd40a52ff4427f3b4f1f8ddd              183 Release
- 4e66ef00a733e964218d932c60207f9ccdfc3185cf607bd30246a8f0ea6cc466             5978 main/binary-arm64/Packages
- 8961776725ee993086c8815d38464b9d7ce3f72a4d897f75cd0f7e196ac11abe             1794 main/binary-arm64/Packages.gz
+ e012a453ee6d875a8cc9d11a0a9c647d5440db9c8068dd9d5a9861258ca2651d              183 Release
+ a86e5a15e3cbcf740ca20859c434f224ad6823748b7ead3e04161bf2ec4ebe9b             6673 main/binary-arm64/Packages
+ 41d0994785cceed174390d55a62c116d1eb9326bce6fbb936ae944aacaec08dd             1903 main/binary-arm64/Packages.gz
 SHA512:
- 6d3b28ff7d0ef733d07041b4062d0b3f4d0ce27f170a29dd356b803b147398178ef7b610539413fbd6ff48ae625b0255fa2261d66d55ec741ee271aa11051e01              183 Release
- dfbe7063deb98beb6e3b9294aff85ef560583441973abb69b2c5f90a533239dbbd0d5b65808e149367418ef9436de8f6aa8d849f1ec1168cc480aff1f0682a34             5978 main/binary-arm64/Packages
- fc5163f0421dc4362acb70a89cf3f78c5b812ce7bf46c69819ca1d28ad2574d4191440c7753496bd75265082bb3fe3df37063e6c430f17d882a70f1c1f4105cb             1794 main/binary-arm64/Packages.gz
+ 70d18f3fab845972a2ac4988cb3859ff74e3a85ddf099dc9c9f7359a10000f54b42c3772823cc7572899117fff3e2920b9b680512868aae9e69fe7b237fcdf84              183 Release
+ d8eeb6bcc5e99b8535b624245966da5713d9c0f077e1b98b44273ec25797a70552b777ebdc822fb3aeb88cf4cd45518adce26c37b2f3f6e169dc7502374cc943             6673 main/binary-arm64/Packages
+ 08d79d3a1c928441d229b5452b3b6a4210ed1962b1d1a0c0482f18da4d54cd49faaa41233a976e25ec44aa15de95fc2e285a3b84d9d8fba1e8d906f6c6665bff             1903 main/binary-arm64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQSYDvjUpspi6U6OdppHqoRElF9FCgUCah4IPgAKCRBHqoRElF9F
-CnBpAQCfwjM2XpCXj6UqQRSRhbxUL1ss8VWYdzGC9QJVCAWo+AEA6Ux1BetqbCr7
-CTDfqZrIxWl9qXNITUHr6gQoslGtzQU=
-=V6ys
+iHUEARYKAB0WIQSYDvjUpspi6U6OdppHqoRElF9FCgUCaib8PAAKCRBHqoRElF9F
+ClxVAP0UybxLimmANovuxY41C7dzn+IS+MRZk0Hr5pwidzX9UAEAtVA8+p0EvYgG
++usSNC2rA6zoVP0Tzdeg7ywvyQchZgk=
+=zRWu
 -----END PGP SIGNATURE-----
