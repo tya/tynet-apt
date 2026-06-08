@@ -164,3 +164,20 @@ Description: Sync per-client VLAN overrides from Ansible inventory to a UniFi co
  Reads inventory/clients/<mac>.yml records as the source of truth and
  reconciles them into the controller via the UniFi REST API.
 
+Package: tynet-unifi-clients
+Version: 0.2.0
+Architecture: arm64
+Maintainer: Ty Alexander <ty.alexander@gmail.com>
+Installed-Size: 8320
+Filename: pool/main/t/tynet-unifi-clients/tynet-unifi-clients_0.2.0_arm64.deb
+Size: 3323608
+MD5sum: 3b8174c3d5872c31f89a2730a027867a
+SHA1: f645c1039e927bbe59b86f31decba5dfb96d546a
+SHA256: 1da26d139e2f373c190ea20594d49c4b952eb02d630b1e456444af732328c38f
+Section: net
+Priority: optional
+Homepage: https://github.com/tya/tynet-unifi-clients
+Description: Sync per-client VLAN overrides from Ansible inventory to a UniFi controller.
+ Reads inventory/clients/<mac>.yml records as the source of truth and
+ reconciles them into the controller via the UniFi REST API.
+
