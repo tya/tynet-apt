@@ -78,6 +78,26 @@ Description: NoCloud cloud-init seed data HTTP server for tynet Pi netboot.
  Serves per-node cloud-init metadata over HTTP to Raspberry Pis
  during NFS netboot.
 
+Package: tynet-cloud-init
+Version: 0.8.1
+Architecture: arm64
+Maintainer: Ty Alexander <ty.alexander@gmail.com>
+Installed-Size: 7033
+Conflicts: serve-cloud-init
+Replaces: serve-cloud-init
+Provides: serve-cloud-init
+Filename: pool/main/t/tynet-cloud-init/tynet-cloud-init_0.8.1_arm64.deb
+Size: 4024246
+MD5sum: e4dc3e8a972766b30c411d90613c7a37
+SHA1: 8bcf2724b3cee1b6ec732cad775571c43d20feb6
+SHA256: 1fce705090eaee30ff664cd936e6daa8b7689300e0e08314e3d16a2fd78db77f
+Section: net
+Priority: optional
+Homepage: https://github.com/tya/tynet-cloud-init
+Description: NoCloud cloud-init seed data HTTP server for tynet Pi netboot.
+ Serves per-node cloud-init metadata over HTTP to Raspberry Pis
+ during NFS netboot.
+
 Package: tynet-img
 Version: 0.1.0
 Architecture: arm64
